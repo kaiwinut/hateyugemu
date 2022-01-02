@@ -5,8 +5,9 @@ with open('README.md', 'r', encoding = 'utf-8') as fh:
 
 setuptools.setup(
 	name = "hateyugemu",
-	version = "0.0.1",
+	version = "0.0.2",
 	author = "Kai Wang",
+	license = "MIT",
 	description = "A board game.",
 	long_description = long_description,
 	long_description_content_type = "text/markdown",

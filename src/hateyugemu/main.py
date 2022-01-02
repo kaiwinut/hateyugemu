@@ -34,14 +34,14 @@ def start_round(topic, players, bots, act):
 		try:
 			os.system('clear')
 			action = next(act)
-			print("Press enter to view " + player + "'s action")
-			input()
+			# print("Press enter to view " + player + "'s action")
+			# input()
 			action_msg = action + ": " + topic[action]
-			print(action_msg, end = "\n\n")
+			# print(action_msg, end = "\n\n")
 			if bots[player] is not None:
 				bots[player].send(msg = get_topic_string(topic) + player + "のお題は↓\n" + action_msg)
-			print("Press enter if you finish checking your action...")
-			input()
+			# print("Press enter if you finish checking your action...")
+			# input()
 		except StopIteration:
 			break
 
@@ -101,7 +101,7 @@ def main(path, bots):
 		# Generate new topic		
 		os.system('clear')
 		idx, topic = generate_topic(topic_data)
-		topic_data.drop([idx])
+		topic_data = topic_data.drop([idx])
 		input("Press enter to view your actions...")
 
 		# Check actions
