@@ -20,10 +20,11 @@ def show_players(players):
 	print(player_list)
 
 
-def parse_name_option():
+def parse_user_option():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('-n', '--newname', action='store_true')
-	return parser.parse_args().newname
+	parser.add_argument('-n', '--newname', action='store_true', help='define new players for this game (new players will not be saved after the game)')
+	parser.add_argument('-s', '--skip', action='store_true', help='skip through the process where the assigned action of each player will be displayed on the screen in turns')
+	return parser.parse_args()
 
 
 def print_topic(topic):

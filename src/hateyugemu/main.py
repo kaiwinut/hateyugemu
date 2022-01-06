@@ -6,6 +6,7 @@ import pandas as pd
 from .notify import LINENotifyBot
 from .utils import *
 
+args = parse_user_option()
 
 def generate_topic(data):
 	idx = random.randint(0, len(data) - 1)
@@ -34,14 +35,22 @@ def start_round(topic, players, bots, act):
 		try:
 			os.system('clear')
 			action = next(act)
-			# print("Press enter to view " + player + "'s action")
-			# input()
+
+			if not args.skip:
+				print("Press enter to view " + player + "'s action")
+				input()
+
 			action_msg = action + ": " + topic[action]
-			# print(action_msg, end = "\n\n")
+
+			if not args.skip:
+				print(action_msg, end = "\n\n")
+
 			if bots[player] is not None:
 				bots[player].send(msg = get_topic_string(topic) + player + "のお題は↓\n" + action_msg)
-			# print("Press enter if you finish checking your action...")
-			# input()
+
+			if not args.skip:
+				print("Press enter if you finish checking your action...")
+				input()
 		except StopIteration:
 			break
 
@@ -52,7 +61,7 @@ def setup_bot():
 
 
 def setup():
-	if parse_name_option():
+	if args.newname:
 		players = {}
 		input_str = input("Enter number of players: ")
 		try: 
