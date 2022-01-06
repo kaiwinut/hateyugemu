@@ -3,7 +3,7 @@
 <a href="https://github.com/kaiwinut/hateyugemu"><img src="https://img.shields.io/github/license/kaiwinut/hateyugemu?color=blue" alt="license badge"></a>
 <a href="https://github.com/kaiwinut/hateyugemu"><img src="https://img.shields.io/github/release-date/kaiwinut/hateyugemu" alt="release date badge"></a>
 
-A digital remake of [a popular board game](https://www.gentosha-edu.co.jp/book/index.php?book_no=378746&changeview=pc) in Japan that integrates [LINE Notify](https://notify-bot.line.me/en/) in order to send content to players.
+A digital remake of [a popular board game](https://www.gentosha-edu.co.jp/book/index.php?book_no=378746&changeview=pc) in Japan that integrates [LINE Notify](https://notify-bot.line.me/en/) to send game contents to players.
 
 ## Usage
 ###### Step 1 
@@ -25,3 +25,6 @@ The first time you run the program, it will ask you to update your tokens file a
 You can leave the tokens as empty strings in the tokens file if you don't need to use LINE Notify to receive game content. Instead of making a new tokens list everytime the player changes, you can also use the `--newname` option to create new players (the new players **will NOT be saved after the game**). 
 
 Also, if you are using LINE Notify to receive game content, you might wish to use the `--skip` option to skip through the process where the assigned action of each player will be displayed on the screen in turns.
+
+## Requirements
+The pandas library is used to load topics from topics.csv (despite that it's an overkill)
